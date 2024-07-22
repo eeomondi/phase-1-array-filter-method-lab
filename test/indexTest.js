@@ -1,5 +1,5 @@
 require ( './helpers.js' );
-
+const { findMatching, fuzzyMatch, matchName } = require('./index');
 const sinon = require( 'sinon' )
 
 describe('index.js', function () {
