@@ -12,4 +12,4 @@ function findMatching(drivers, query) {
     return drivers.filter(driver => driver.name === query);
   }
   
-  module.exports = { findMatching, fuzzyMatch, matchName };
+  export default { findMatching, fuzzyMatch, matchName };
