@@ -1,13 +1,13 @@
-const drivers = ['Bobby', 'bobby', 'Sammy', 'Sarah', 'Sally'];
-
-function findMatching(name) {
-  return drivers.filter(driver => driver.toLowerCase() === name.toLowerCase());
+function findMatching(drivers, query) {
+  return drivers.filter(driver => driver.name && typeof driver.name === 'string' && driver.name.toLowerCase().includes(query.toLowerCase()));
 }
 
-function fuzzyMatch(name) {
-  return drivers.filter(driver => driver.toLowerCase().startsWith(name.toLowerCase()));
+function fuzzyMatch(drivers, query) {
+  return drivers.filter(driver => driver.name && typeof driver.name === 'string' && driver.name.toLowerCase().startsWith(query.toLowerCase()));
 }
 
-function matchName(name) {
-  return drivers.includes(name);
+function matchName(drivers, query) {
+  return drivers.filter(driver => driver.name && typeof driver.name === 'string' && driver.name === query);
 }
+
+export default { findMatching, fuzzyMatch, matchName };
